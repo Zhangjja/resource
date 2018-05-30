@@ -1,0 +1,36 @@
+{% extends 'base.html' %} 
+
+{% block breadcrumb %}
+<li class="breadcrumb-item active"><a href = {{"http://127.0.0.1:8000/list_dir/?a=" |add:info.father_path}}>back</a></li>
+<li class="breadcrumb-item active"><a href = {{"http://127.0.0.1:8000/list_dir/?a=" |add:info.path}}>{{info.path}}</a></li>
+
+{% endblock %} 
+
+{% block content %}
+
+<div class="mb-4"><a href = {{"http://127.0.0.1:8000/upload_file/?a=" |add:info.path}}><button	type="submit"	class="btn	btn-success">up_load</button></a></div>
+
+
+<table class="table">
+    <thead class="thead-inverse">
+        <tr>
+            <th>Board</th>
+            <th>test1</th>
+            <th>test2</th>
+            <th>test3</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        {% for key,value in info.file_list.items %}
+        <tr>
+			<td><a href = {{"http://127.0.0.1:8000/downloads/?a=" |add:value}}>{{key}}</a></td>
+
+			<td class="align-middle" >0</td>
+            <td class="align-middle">0</td>
+            <td><a href = {{"http://127.0.0.1:8000/downloads/?a=" |add:value}}>download</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base.html' %} 
+
+{% block breadcrumb %}
+<li class="breadcrumb-item active">123</li>
+<li class="breadcrumb-item active">456</li>
+
+{% endblock %} 
+
+{% block content %}
+
+<form  method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="提交"/>
+</form>
+
+
+
+{% endblock %}

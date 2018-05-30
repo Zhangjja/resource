@@ -1,0 +1,21 @@
+{%	extends	'base.html'	%}
+{%	block	title	%}Create  a	 New   Dir{%	endblock	%}
+{%	block	breadcrumb	%}
+	<li	class="breadcrumb-item"><a	href="{%	url	'home'	%}">Boards</a></li>
+	<li	class="breadcrumb-item"><a	>create_template</a></li>
+	<li	class="breadcrumb-item	active">New	dir</li>
+{%	endblock	%}
+{%	block	content	%}
+
+<form	method="post">
+				{%	csrf_token	%}
+				<div	class="form-group">
+						<label	for="id_subject">Subject</label>
+						<input	type="text"	class="form-control"	id="id_subject"	name="subject">
+				</div>
+
+				<button	type="submit"	class="btn	btn-success">Post</button>
+</form>
+
+
+{%	endblock	%}

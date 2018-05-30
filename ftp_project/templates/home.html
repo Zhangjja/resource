@@ -1,0 +1,31 @@
+{% extends 'base.html' %} 
+
+{% block breadcrumb %}
+<li class="breadcrumb-item active">Ftp-Boards</li>
+
+{% endblock %} 
+{% block content %}
+
+<table class="table">
+    <thead class="thead-inverse">
+        <tr>
+            <th>Board</th>
+            <th>Project</th>
+            <th>Subproject</th>
+            <th>Update_time</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for key, value in info.file_list.items %}
+        <tr>
+            <td>
+                <a href = {{"http://127.0.0.1:8000/list_dir/?a=" |add:value}}>{{key}}</a>
+            </td>
+            <td class="align-middle">0</td>
+            <td class="align-middle">0</td>
+            <td></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
